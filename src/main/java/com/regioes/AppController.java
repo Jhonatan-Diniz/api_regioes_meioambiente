@@ -32,21 +32,21 @@ public class AppController {
         }
         return infos;
     }
-//    @GetMapping("/{regiao_id}/questao")
-//    public Map<String, Map<String, String>> questoes(@PathVariable int regiao_id) {
-//        QuestoesService questoes_service = new QuestoesService();
-//        ArrayList<QuestaoModel> questoes = questoes_service.getQuestoesByRegiao(regiao_id);
-//        Map<String, Map<String, String>> questoes_json = new HashMap<String, Map<String, String>>();
-//        for (int i = 0; i < questoes.size(); i++) {
-//            Map<String, String> current_questao = new HashMap<String, String>();
-//            current_questao.put("pergunta", questoes.get(i).getPergunta());
-//            current_questao.put("alternativa", questoes.get(i).getAlternativasAsAString());
-//            current_questao.put("questao_id", questoes.get(i).getIdString());
-//            current_questao.put("regiao_id", questoes.get(i).getRegiaoIdString());
-//
-//            questoes_json.put(String.valueOf(i), current_questao);
-//        }
-//
-//        return questoes_json;
-//    }
+    @GetMapping("/{regiao_id}/questao")
+    public Map<String, Map<String, String>> questoes(@PathVariable int regiao_id) {
+        QuestoesService questoes_service = new QuestoesService();
+        ArrayList<QuestaoModel> questoes = questoes_service.getQuestoesByRegiao(regiao_id);
+        Map<String, Map<String, String>> questoes_json = new HashMap<String, Map<String, String>>();
+        for (int i = 0; i < questoes.size(); i++) {
+            Map<String, String> current_questao = new HashMap<String, String>();
+            current_questao.put("pergunta", questoes.get(i).getPergunta());
+            current_questao.put("alternativa", questoes.get(i).getAlternativasAsAString());
+            current_questao.put("questao_id", questoes.get(i).getIdString());
+            current_questao.put("regiao_id", questoes.get(i).getRegiaoIdString());
+
+            questoes_json.put(String.valueOf(i), current_questao);
+        }
+
+        return questoes_json;
+    }
 }
