@@ -14,35 +14,22 @@ import java.util.ArrayList;
 
 @RestController
 public class AppController {
-<<<<<<< HEAD
-=======
-    @GetMapping("/hello")
-    public Map<String, String> Ola() {
-        return Map.of("message", "Olá, mundo!");
-    }
-
->>>>>>> 331dabd539d01ed719bdc7c35a86990db610124c
     @GetMapping("/info_regiao")
     public Map<String, String> info_regiao(@RequestParam String regiao) {
         RegioesService regiao_service = new RegioesService();
         RegiaoModel regiaoModel = regiao_service.getRegiaoByName(regiao);
         Map<String, String> infos = new HashMap<String, String>();
-<<<<<<< HEAD
-
         infos.put("nome", regiaoModel.getNome());
         infos.put("gases", regiaoModel.getGases());
         infos.put("lixos", regiaoModel.getLixo());
         infos.put("populacao", String.valueOf(regiaoModel.getPopulacao()));
 
-=======
-        
         if(regiaoModel != null) {
 	        infos.put("nome", regiaoModel.getNome());
 	        infos.put("gases", regiaoModel.getGases());
 	        infos.put("lixos", regiaoModel.getLixo());
 	        infos.put("populacao", String.valueOf(regiaoModel.getPopulacao()));
         }
->>>>>>> 331dabd539d01ed719bdc7c35a86990db610124c
         return infos;
     }
     @GetMapping("/{regiao_id}/questao")
