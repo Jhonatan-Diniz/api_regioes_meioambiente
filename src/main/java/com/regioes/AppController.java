@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -12,21 +13,16 @@ import java.util.ArrayList;
 
 @RestController
 public class AppController {
-    @GetMapping("/hello")
-    public Map<String, String> Ola() {
-        return Map.of("message", "Olá, mundo!");
-    }
-
-    @PostMapping("/info_regiao")
-    public Map<String, String> info_regiao(@RequestBody InfoDTO info) {
+    @GetMapping("/info_regiao")
+    public Map<String, String> info_regiao(@RequestParam String regiao) {
         RegioesService regiao_service = new RegioesService();
-        RegiaoModel regiao = regiao_service.getRegiaoByName(info.nome);
+        RegiaoModel regiaoModel = regiao_service.getRegiaoByName(regiao);
         Map<String, String> infos = new HashMap<String, String>();
 
-        infos.put("nome", regiao.getNome());
-        infos.put("gases", regiao.getGases());
-        infos.put("lixos", regiao.getLixo());
-        infos.put("populacao", String.valueOf(regiao.getPopulacao()));
+        infos.put("nome", regiaoModel.getNome());
+        infos.put("gases", regiaoModel.getGases());
+        infos.put("lixos", regiaoModel.getLixo());
+        infos.put("populacao", String.valueOf(regiaoModel.getPopulacao()));
 
         return infos;
     }

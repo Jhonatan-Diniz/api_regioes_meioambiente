@@ -1,8 +1,6 @@
 com\regioes\AppController.class
-com\regioes\RegiaoModel.class
-com\regioes\QuestoesService.class
-com\regioes\Teste.class
 com\regioes\QuestaoModel.class
+com\regioes\RegiaoModel.class
 com\regioes\App.class
-com\regioes\InfoDTO.class
 com\regioes\RegioesService.class
+com\regioes\QuestoesService.class
