@@ -1,6 +1,8 @@
-com\regioes\AppController.class
-com\regioes\QuestaoModel.class
-com\regioes\RegiaoModel.class
+com\regioes\connection\ConnectDb.class
+com\regioes\services\QuestoesService.class
+com\regioes\models\QuestaoModel.class
 com\regioes\App.class
-com\regioes\RegioesService.class
-com\regioes\QuestoesService.class
+com\regioes\controller\QuestoesController.class
+com\regioes\services\RegioesService.class
+com\regioes\models\RegiaoModel.class
+com\regioes\controller\RegioesController.class
