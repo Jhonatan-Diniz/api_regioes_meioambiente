@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -15,14 +17,14 @@ import com.regioes.models.QuestaoModel;
 import com.regioes.models.RegiaoModel;
 import com.regioes.services.QuestoesService;
 import com.regioes.services.RegioesService;
+import com.regioes.dto.RegiaoResponse;
 
 @RestController
 public class RegioesController {
     @GetMapping("/info_regiao")
-    public Map<String, String> info_regiao(@RequestParam String regiao_nome) {
+    public ResponseEntity<RegiaoResponse> info_regiao(@RequestParam String regiao_nome) {
         RegioesService regiao_service = new RegioesService();
-        Map<String, String> resp =
-            regiao_service.regiaoResponse(regiao_service.getRegiaoByName(regiao_nome));
-        return resp;
+        RegiaoModel regiao_model = regiao_service.getRegiaoByName(regiao_nome);
+        return new ResponseEntity<RegiaoResponse>(regiao_service.regiaoResponse(regiao_model), HttpStatus.OK);
     }
 }

@@ -1,5 +1,4 @@
 BEGIN TRANSACTION;
-/*
 CREATE TABLE Regioes(
     RegiaoId INTEGER PRIMARY KEY AUTOINCREMENT,
     Nome TEXT NOT NULL,
@@ -26,6 +25,5 @@ CREATE TABLE Questoes(
 
 INSERT INTO Questoes VALUES(NULL, 'Meu fi quer bolacha?', 'a_nao;b_nao;c_nao;d_nap', 'd', 1);
 INSERT INTO Questoes VALUES(NULL, 'Meu fi quer cachaca?', 'a_mimdepapai;b_mimdepapai;c_mimdepapai;d_mimdepapai', 'a', 1);
-INSERT INTO Questoes VALUES(NULL, 'QUESTAO NOVA', '{a: "aaaaaa", b: "bbbbb", c: "cccccc", d:"dddddddd"}', 'd', 2);
-*/
+INSERT INTO Questoes VALUES(NULL, 'QUESTAO NOVA', 'a_alternativa1;b_alternativa_2;c_alternativa_3;d_alternativas_4', 'd', 2);
 COMMIT;

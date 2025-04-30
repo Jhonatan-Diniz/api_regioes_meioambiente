@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import com.regioes.models.RegiaoModel;
 import com.regioes.models.QuestaoModel;
 import com.regioes.connection.ConnectDb;
+import com.regioes.dto.QuestaoResponse;
 
 public class QuestoesService {
     public ArrayList<QuestaoModel> getQuestoesArrayByRegiao(int regiao_id) {
@@ -45,21 +46,18 @@ public class QuestoesService {
         return questions_list;
     }
 
-    public Map<String, Map<String, String>> questaoResponse(int regiao_id) {
-        ArrayList<QuestaoModel> questoes = getQuestoesArrayByRegiao(regiao_id);
-        Map<String, Map<String, String>> questoes_json = new HashMap<String, Map<String, String>>();
+    public QuestaoResponse questaoResponse(QuestaoModel quest_model) {
+        QuestaoResponse quest_response = new QuestaoResponse();
+        quest_response.pergunta = quest_model.getPergunta();
+        String[] quest_alternativas = quest_model.getAlternativas();
 
-        for (int i = 0; i < questoes.size(); i++) {
-            Map<String, String> current_questao = new HashMap<String, String>();
+        quest_response.alternativas.put("a", quest_alternativas[0]);
+        quest_response.alternativas.put("b", quest_alternativas[1]);
+        quest_response.alternativas.put("c", quest_alternativas[2]);
+        quest_response.alternativas.put("d", quest_alternativas[3]);
 
-            current_questao.put("pergunta", questoes.get(i).getPergunta());
-            current_questao.put("alternativa", questoes.get(i).getAlternativasAsAString());
-            current_questao.put("questao_id", questoes.get(i).getIdString());
-            current_questao.put("regiao_id", questoes.get(i).getRegiaoIdString());
-
-            questoes_json.put(String.valueOf(i), current_questao);
-        }
-
-        return questoes_json;
+        quest_response.id = quest_model.getId();
+        quest_response.regiao_id = quest_model.getRegiaoId();
+        return quest_response;
     }
 }

@@ -7,9 +7,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.sql.Statement;
 
+import com.regioes.connection.ConnectDb;
 import com.regioes.models.RegiaoModel;
 import com.regioes.models.QuestaoModel;
-import com.regioes.connection.ConnectDb;
+import com.regioes.dto.RegiaoResponse;
 
 public class RegioesService {
     public RegiaoModel getRegiaoByName(String nome){
@@ -18,9 +19,11 @@ public class RegioesService {
         try {
             Connection con = db.getConnection();
             Statement statement = con.createStatement();
+            System.out.println(nome);
+            System.out.println(String.format("select * from Regioes WHERE nome='%s'", nome));
             ResultSet regiao_info = 
                 statement.executeQuery(
-                    String.format("SELECT * FROM Regioes WHERE nome='%s'", nome)
+                    String.format("select * from Regioes WHERE nome='%s'", nome)
                 );
 
             regiao = new RegiaoModel(
@@ -32,25 +35,16 @@ public class RegioesService {
             );
         } catch (SQLException e) {
             System.out.println(e.getMessage());
+            System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         }
         return regiao;
     }
 
-    public Map<String, String> regiaoResponse(RegiaoModel regiao) {
-        Map<String, String> infos = new HashMap<String, String>();
+    public RegiaoResponse regiaoResponse(RegiaoModel regiao_model) {
+        RegiaoResponse regiao_response = new RegiaoResponse();
+        regiao_response.nome = regiao_model.getNome();
+        regiao_response.numero_habitantes = regiao_model.getPopulacao();
 
-        infos.put("nome", regiao.getNome());
-        infos.put("gases", regiao.getGases());
-        infos.put("lixos", regiao.getLixo());
-        infos.put("populacao", String.valueOf(regiao.getPopulacao()));
-
-        if(regiao != null) {
-            infos.put("nome", regiao.getNome());
-            infos.put("gases", regiao.getGases());
-            infos.put("lixos", regiao.getLixo());
-            infos.put("populacao", String.valueOf(regiao.getPopulacao()));
-        }
-
-        return infos;
+        return regiao_response;
     }
 }
