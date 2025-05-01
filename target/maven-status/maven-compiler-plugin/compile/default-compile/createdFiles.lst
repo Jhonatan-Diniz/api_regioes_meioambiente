@@ -1,6 +1,7 @@
 com\regioes\connection\ConnectDb.class
 com\regioes\services\QuestoesService.class
 com\regioes\dto\RegiaoResponse.class
+com\regioes\CorsConfiguration.class
 com\regioes\models\QuestaoModel.class
 com\regioes\App.class
 com\regioes\controller\QuestoesController.class

@@ -1,4 +1,5 @@
 package com.regioes.services;
+
 import java.sql.DriverManager;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -12,19 +13,19 @@ import com.regioes.models.RegiaoModel;
 import com.regioes.models.QuestaoModel;
 import com.regioes.dto.RegiaoResponse;
 
-public class RegioesService {
+public class RegioesService extends ConnectDb {
     public RegiaoModel getRegiaoByName(String nome){
         RegiaoModel regiao = null;
-        ConnectDb db = new ConnectDb();
         try {
-            Connection con = db.getConnection();
-            Statement statement = con.createStatement();
-            System.out.println(nome);
-            System.out.println(String.format("select * from Regioes WHERE nome='%s'", nome));
+            System.out.println("- Conectando com o banco de dados -");
+            Statement statement = getConnection().createStatement();
+            System.out.println("- Selectionando informacoes da regiao -");
             ResultSet regiao_info = 
                 statement.executeQuery(
                     String.format("select * from Regioes WHERE nome='%s'", nome)
                 );
+
+            System.out.println("- Criando modelo da regiao -");
 
             regiao = new RegiaoModel(
                     regiao_info.getInt("RegiaoId"),
@@ -34,17 +35,20 @@ public class RegioesService {
                     regiao_info.getInt("numero_habitantes")
             );
         } catch (SQLException e) {
+            System.out.println("- Erro em alguma etapa -");
             System.out.println(e.getMessage());
-            System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         }
+        System.out.println("- Retornando modelo da regiao -");
         return regiao;
     }
 
     public RegiaoResponse regiaoResponse(RegiaoModel regiao_model) {
         RegiaoResponse regiao_response = new RegiaoResponse();
+        System.out.println("- Criando o objeto de Response de RegiaoModel -");
         regiao_response.nome = regiao_model.getNome();
         regiao_response.numero_habitantes = regiao_model.getPopulacao();
 
+        System.out.println("- Retornando objeto de Response -");
         return regiao_response;
     }
 }

@@ -14,14 +14,13 @@ import com.regioes.models.QuestaoModel;
 import com.regioes.connection.ConnectDb;
 import com.regioes.dto.QuestaoResponse;
 
-public class QuestoesService {
+public class QuestoesService extends ConnectDb {
     public ArrayList<QuestaoModel> getQuestoesArrayByRegiao(int regiao_id) {
         ArrayList<QuestaoModel> questions_list = new ArrayList();
         QuestaoModel quest;
-        ConnectDb db = new ConnectDb();
+
         try {
-            Connection con = db.getConnection();
-            Statement statement = con.createStatement();
+            Statement statement = getConnection().createStatement();
             ResultSet quest_info =
                 statement.executeQuery(
                     String.format(
