@@ -30,9 +30,8 @@ public class RegioesService extends ConnectDb {
             regiao = new RegiaoModel(
                     regiao_info.getInt("RegiaoId"),
                     regiao_info.getString("Nome"),
-                    regiao_info.getString("Gases"),
-                    regiao_info.getString("lixo_eletronico"),
-                    regiao_info.getInt("numero_habitantes")
+                    regiao_info.getDouble("numero_habitantes"),
+                    regiao_info.getString("qualidade_ar")
             );
         } catch (SQLException e) {
             System.out.println("- Erro em alguma etapa -");
@@ -45,8 +44,10 @@ public class RegioesService extends ConnectDb {
     public RegiaoResponse regiaoResponse(RegiaoModel regiao_model) {
         RegiaoResponse regiao_response = new RegiaoResponse();
         System.out.println("- Criando o objeto de Response de RegiaoModel -");
+        regiao_response.id = regiao_model.getId();
         regiao_response.nome = regiao_model.getNome();
         regiao_response.numero_habitantes = regiao_model.getPopulacao();
+        regiao_response.info_sobre_poluicao = regiao_model.getInfo();
 
         System.out.println("- Retornando objeto de Response -");
         return regiao_response;

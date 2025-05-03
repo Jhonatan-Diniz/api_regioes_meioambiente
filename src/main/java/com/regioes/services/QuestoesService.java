@@ -41,7 +41,6 @@ public class QuestoesService extends ConnectDb {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-
         return questions_list;
     }
 
@@ -58,5 +57,24 @@ public class QuestoesService extends ConnectDb {
         quest_response.id = quest_model.getId();
         quest_response.regiao_id = quest_model.getRegiaoId();
         return quest_response;
+    }
+
+    public boolean checkResposta(String alternativa, String questao_id) {
+        try {
+            Statement statement = getConnection().createStatement();
+            ResultSet quest_info =
+                statement.executeQuery(
+                    String.format(
+                        "SELECT Correta FROM Questoes WHERE QuestoesId ='%s'",
+                        questao_id
+                    )
+                );
+            if (quest_info.getString("Correta").equals(alternativa)) {
+                return true;
+            }
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+        return false;
     }
 }

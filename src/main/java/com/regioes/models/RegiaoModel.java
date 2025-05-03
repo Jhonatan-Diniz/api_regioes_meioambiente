@@ -3,31 +3,29 @@ package com.regioes.models;
 public class RegiaoModel {
     private int id;
     private String nome;
-    private String gases;
-    private String lixo_eletronico;
-    private int populacao;
+    private double populacao;
+    private String info_qualidade_ar;
 
-    public RegiaoModel(int id, String nome, String gases, String lixo_eletronico, int populacao) {
+    public RegiaoModel(int id, String nome, double populacao, String info_ar) {
         this.id = id;
         this.nome = nome;
-        this.gases = gases;
-        this.lixo_eletronico = lixo_eletronico;
         this.populacao = populacao;
+        this.info_qualidade_ar = info_ar;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getNome() {
         return nome;
     }
 
-    public String getGases() {
-        return gases;
-    }
-
-    public String getLixo() {
-        return lixo_eletronico;
-    }
-
-    public int getPopulacao() {
+    public double getPopulacao() {
         return populacao;
+    }
+
+    public String getInfo() {
+        return info_qualidade_ar;
     }
 }

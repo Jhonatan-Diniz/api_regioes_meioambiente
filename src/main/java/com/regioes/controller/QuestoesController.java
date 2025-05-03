@@ -19,12 +19,14 @@ import com.regioes.models.RegiaoModel;
 import com.regioes.services.QuestoesService;
 import com.regioes.services.RegioesService;
 import com.regioes.dto.QuestaoResponse;
+import com.regioes.dto.RespostaResponse;
 
 @RestController
 public class QuestoesController {
+
+    QuestoesService questoes_service = new QuestoesService();
     @GetMapping("/{regiao_id}/questao")
     public ResponseEntity<List<QuestaoResponse>> questoes(@PathVariable int regiao_id) {
-        QuestoesService questoes_service = new QuestoesService();
         ArrayList<QuestaoModel> questoes_regiao = questoes_service.getQuestoesArrayByRegiao(regiao_id);
         List<QuestaoResponse> questoes_response = new ArrayList<>();
 
@@ -33,5 +35,12 @@ public class QuestoesController {
         }
 
         return new ResponseEntity<List<QuestaoResponse>>(questoes_response, HttpStatus.OK);
+    }
+
+    @GetMapping("/resposta")
+    public ResponseEntity<RespostaResponse> resposta(@RequestParam String questao_id, @RequestParam String alternativa) {
+         RespostaResponse resposta = new RespostaResponse();
+         resposta.resposta_correta= questoes_service.checkResposta(alternativa, questao_id);
+         return new ResponseEntity<RespostaResponse>(resposta, HttpStatus.OK);
     }
 }

@@ -4,6 +4,7 @@ com\regioes\dto\RegiaoResponse.class
 com\regioes\CorsConfiguration.class
 com\regioes\models\QuestaoModel.class
 com\regioes\App.class
+com\regioes\dto\RespostaResponse.class
 com\regioes\controller\QuestoesController.class
 com\regioes\dto\QuestaoResponse.class
 com\regioes\services\RegioesService.class
