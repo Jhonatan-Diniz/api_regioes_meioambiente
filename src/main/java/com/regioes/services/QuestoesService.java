@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.regioes.models.RegiaoModel;
 import com.regioes.models.QuestaoModel;
@@ -59,7 +60,7 @@ public class QuestoesService extends ConnectDb {
         return quest_response;
     }
 
-    public boolean checkResposta(String alternativa, String questao_id) {
+    public boolean checkResposta(String alternativa, int questao_id) {
         try {
             Statement statement = getConnection().createStatement();
             ResultSet quest_info =
@@ -76,5 +77,16 @@ public class QuestoesService extends ConnectDb {
             System.err.println(e.getMessage());
         }
         return false;
+    }
+
+    public Integer quantRespostasCertas(int regiao_id, List<String> respostas) {
+        Integer respostas_corretas = new Integer(0);
+        ArrayList<QuestaoModel> questoes = getQuestoesArrayByRegiao(regiao_id);
+        for (int i = 0; i < respostas.size(); i++) {
+            if (checkResposta(respostas.get(i), questoes.get(i).getId())) {
+                respostas_corretas++;
+            }
+        }
+        return respostas_corretas;
     }
 }
