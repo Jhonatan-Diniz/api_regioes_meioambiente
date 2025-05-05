@@ -57,6 +57,6 @@ public class QuestoesController {
         Integer n_acertos = questoes_service.quantRespostasCertas(regiao_id, respostas);
         respostas_corretas.message = "sucesso";
         respostas_corretas.quant_acertos = n_acertos;
-        return new ResponseEntity<RespostasCertasResponse>(respostas_corretas, HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<RespostasCertasResponse>(respostas_corretas, HttpStatus.OK);
     }
 }
