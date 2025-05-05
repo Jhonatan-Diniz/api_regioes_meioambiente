@@ -32,25 +32,26 @@ INSERT INTO Questoes VALUES(NULL, 'Meu fi quer bolacha?', 'a_nao;b_nao;c_nao;d_n
 INSERT INTO Questoes VALUES(NULL, 'Meu fi quer cachaca?', 'a_mimdepapai;b_mimdepapai;c_mimdepapai;d_mimdepapai', 'a', 1);
 INSERT INTO Questoes VALUES(NULL, 'QUESTAO NOVA', 'a_alternativa1;b_alternativa_2;c_alternativa_3;d_alternativas_4', 'd', 2);
 */
+INSERT INTO Questoes VALUES (NULL, 'Qual cidade do Sul do Brasil é referência em descarte de eletrônicos?', 'Curitiba (PR);Joinville (SC);Caxias do Sul (RS);Lages (SC)', 'A', 1);
+INSERT INTO Questoes VALUES (NULL, 'Santa Catarina tem algum programa estadual para descarte de eletrônicos?', 'Apenas iniciativas privadas em algumas cidades;Sim, o programa Recicla SC;Só existe regulamentação federal;Não há nenhum programa específico', 'B', 1);
+INSERT INTO Questoes VALUES (NULL, 'Como Porto Alegre (RS) organiza a coleta de eletrônicos?', 'Apenas em empresas privadas licenciadas;Apenas no final do ano;Com o DMLU e eventos de coleta especial;Por meio de convênios com ONGs', 'C', 1);
+INSERT INTO Questoes VALUES (NULL, 'Existe algum evento fixo para descarte de eletrônicos no Sul?', 'Não existem ações fixas, só campanhas online;Apenas em municípios com mais de 500 mil habitantes;Algumas escolas promovem descarte interno;Sim, cidades como Florianópolis fazem mutirões anuais', 'D', 1);
+INSERT INTO Questoes VALUES (NULL, 'Quais empresas atuam com reciclagem de eletrônicos na região Sul?', 'Copel e Celesc;Weee.do (SC);Sanepar e Corsan;Vivo e Gerdau', 'B', 1);
+INSERT INTO Questoes VALUES (NULL, 'O que acontece com os eletrônicos após serem descartados corretamente?', 'São armazenados em depósitos municipais;São destruídos para evitar reuso;São desmontados e reciclados por empresas especializadas;São enviados para lixões controlados', 'C', 1);
+INSERT INTO Questoes VALUES (NULL, 'Crianças e jovens participam de ações de descarte no Sul?', 'Sim, escolas realizam campanhas com os alunos;Apenas jovens do ensino médio participam;Não, apenas adultos voluntários;Só com autorização judicial', 'A', 1);
+INSERT INTO Questoes VALUES (NULL, 'Existe descarte eletrônico em supermercados na região?', 'Apenas em feiras ambientais;Sim, redes como Angeloni têm pontos de coleta;Alguns mercados como Condor participam dessas ações;Não, isso é responsabilidade das prefeituras', 'B', 1);
+INSERT INTO Questoes VALUES (NULL, 'O que fazer com uma bateria de notebook em cidades pequenas do Sul?', 'Jogar no lixo seco;Enterrar longe de casas e cursos d’água;Guardar até a próxima coleta itinerante;Levar a lojas de informática ou pedir orientação na prefeitura', 'D', 1);
+INSERT INTO Questoes VALUES (NULL, 'As universidades do Sul do Brasil fazem coleta de e-lixo?', 'Apenas para descarte interno de equipamentos da instituição;Sim, muitas têm programas de coleta para a comunidade;Algumas apenas em datas específicas;Não, por questões legais', 'B',  1);
 
 INSERT INTO Questoes VALUES(NULL, 'Qual é um dos maiores efeitos negativos sobre o meio ambiente resultantes do descarte inadequado de resíduos eletrônicos no Nordeste brasileiro?', 'Diminuição da poluição sonora;Aumento da diversidade biológica;Poluição do solo e da água devido a metais pesados;Desenvolvimento sustentável das comunidades locais', 'C', 2);
-
 INSERT INTO Questoes VALUES(NULL, 'O lanço ilegal de eletrônicos é considerado crime ambiental de acordo com qual lei no Brasil?', 'Código de Trânsito Brasileiro;Lei de Crimes Ambientais (Lei nº 9.605/1998);Lei de Diretrizes Orçamentárias;Estatuto da Criança e do Adolescente', 'B',2);
-
 INSERT INTO Questoes VALUES(NULL, 'Qual dos seguintes metais perigosos é frequentemente encontrado em lixo eletrônico e pode afetar a saúde humana?', 'Lítio;Alumínio;Mercúrio;Zinco', 'C', 2);
-
 INSERT INTO Questoes VALUES(NULL, 'Qual dos problemas as cidades do Nordeste enfrentam quando se trata da administração do lixo eletrônico?', 'Falta de eletricidade para o processo de reciclagem;Ausência de infraestrutura adequada para coleta e tratamento;Número excessivo de aterros sanitários controlados;Exportação clandestina de resíduos', 'B', 2);
-
 INSERT INTO Questoes VALUES(NULL, 'O que acontece com os trabalhadores informais que manipulam lixo eletrônico sem a devida proteção?', 'Recebem benefícios governamentais automaticamente;Estão amparados por políticas de saúde pública;Estão em contato com substâncias tóxicas perigosas;Trabalham apenas com materiais recicláveis não perigosos', 'C', 2);
-
 INSERT INTO Questoes VALUES(NULL, 'Qual destes dispositivos eletrônicos apresenta mais dificuldade para ser reciclado?', 'Adaptadores de celular;Baterias de lítio;Cabos USB;CDs e DVDs', 'B', 2);
-
 INSERT INTO Questoes VALUES(NULL, 'Um dos impactos sociais do descarte ruim de lixo eletrônico é:', 'Criação de empregos formais com registro legal;Promoção do turismo sustentável;Geração de empregos informais em situações precárias;Diminuição do custo de vida nas áreas periféricas', 'C', 2);
-
 INSERT INTO Questoes VALUES(NULL, 'Qual órgão tem a responsabilidade de vigiar e penalizar empresas que descartam lixo eletrônico de maneira ilegal?', 'Ministério da Educação;Conselho Nacional de Trânsito;Instituto Brasileiro do Meio Ambiente (IBAMA);Ministério da Fazenda', 'C', 2);
-
 INSERT INTO Questoes VALUES(NULL, 'Por que o lixo eletrônico é visto como uma ameaça ao meio ambiente?', 'Porque ocupa grande espaço em aterros sanitários;Porque contém substâncias químicas tóxicas que se degradam lentamente;Porque atrai animais silvestres;Porque se decompõe rapidamente', 'B', 2);
-
 INSERT INTO Questoes VALUES(NULL, 'Qual é uma alternativa sustentável para o problema do lixo eletrônico no Nordeste?', 'Envio de resíduos para países vizinhos;Descarte em aterros longe das cidades;Formação de cooperativas para reciclagem e pontos de coleta seletiva;Incineração sem supervisão ambiental', 'C', 2);
 
 INSERT INTO Questoes VALUES(NULL, 'Em outubro de 2024, o Instituto de Proteção Ambiental do Amazonas (Ipaam) flagrou a continuidade das atividades ilegais de um lixão clandestino na zona leste de Manaus. Qual era a principal infração cometida pelos responsáveis?', 'Descarte de resíduos hospitalares sem autorização;Importação ilegal de lixo eletrônico;Descarte irregular de resíduos domésticos e industriais, incluindo lixo eletrônico;Venda de equipamentos eletrônicos sem nota fiscal', 'C', 3);
@@ -91,9 +92,18 @@ INSERT INTO Questoes VALUES(NULL, 'Qual o significado da sigla PEV, frequentemen
 INSERT INTO Questoes VALUES(NULL, 'Qual lei brasileira estabelece a responsabilidade compartilhada pelo ciclo de vida dos produtos, incluindo eletrônicos?', 'Lei da Sustentabilidade 11.123/06;Lei de Responsabilidade Ambiental 12.305/10;Lei de Coleta e Reciclagem 10.015/09;Lei de Proteção Ambiental 13.402/11', 'B', 4);
 
 INSERT INTO Questoes VALUES(NULL, 'Em qual dessas cidades do Espírito Santo existem pontos fixos de coleta de lixo eletrônico em shoppings e universidades?', 'Serra;Linhares;Cachoeiro de Itapemirim;Vitória', 'D', 4);
-
 INSERT INTO Questoes VALUES(NULL, 'Qual desses componentes de um aparelho eletrônico representa risco de contaminação por chumbo?', 'Carcaça plástica;Tela de LCD;Bateria;Placa-mãe', 'D', 4);
-
 INSERT INTO Questoes VALUES(NULL, 'Qual atitude é recomendada antes de descartar um computador em um ponto de coleta em Minas Gerais?', 'Retirar apenas os cabos;Desligar o Wi-Fi;Remover dados pessoais e o HD;Trocar o sistema operacional', 'C', 4);
+
+INSERT INTO Questoes VALUES (NULL, 'Qual é um dos principais impactos ambientais do descarte inadequado de lixo eletrônico na região Centro-Oeste do Brasil?', 'Redução do volume de resíduos em aterros sanitários;Aumento da biodiversidade local;Contaminação do solo e da água por metais pesados;Geração de empregos informais com alta renda', 'C', 5);
+INSERT INTO Questoes VALUES (NULL, 'Um dos componentes perigosos presentes em lixo eletrônico, é:', 'Alumínio reciclável;Mercúrio;Gás carbônico;Enxofre', 'B', 5);
+INSERT INTO Questoes VALUES (NULL, 'O descarte irregular de lixo eletrônico pode ser classificado como:', 'Um crime de baixo impacto social;Uma infração civil comum;Um crime ambiental, conforme a Lei de Crimes Ambientais (Lei 9.605/98);Um crime tributário', 'C', 5);
+INSERT INTO Questoes VALUES (NULL, 'Qual setor é mais impactado negativamente pela contaminação do solo causada por lixo eletrônico no Centro-Oeste?', 'Turismo;Agricultura;Pesca industrial;Indústria automobilística', 'B', 5);
+INSERT INTO Questoes VALUES (NULL, 'Qual é uma consequência social do descarte ilegal de lixo eletrônico?', 'Incentivo ao uso consciente de tecnologia;Redução da criminalidade urbana;Aumento de doenças em catadores de materiais recicláveis;Estímulo à educação ambiental nas escolas', 'C', 5);
+INSERT INTO Questoes VALUES (NULL, 'Uma das dificuldades enfrentadas pelos municípios do Centro-Oeste para lidar com o lixo eletrônico é:', 'Proibição de coleta seletiva pela legislação;Falta de aterros sanitários;Ausência de políticas públicas específicas e infraestrutura de reciclagem;Clima desfavorável para coleta de resíduos', 'C', 5);
+INSERT INTO Questoes VALUES (NULL, 'Qual das opções a seguir é uma prática recomendada para lidar com o lixo eletrônico?', 'Queimar os aparelhos em terrenos baldios;Enterrar baterias em locais secos;Entregar os equipamentos em pontos de coleta autorizados;Jogar os eletrônicos no lixo comum', 'C', 5);
+INSERT INTO Questoes VALUES (NULL, 'A atuação de grupos que descartam lixo eletrônico ilegalmente em áreas protegidas pode configurar também o crime de:', 'Lavagem de dinheiro;Invasão de propriedade;Poluição ambiental com agravante;Falsidade ideológica', 'C', 5);
+INSERT INTO Questoes VALUES (NULL, 'O que a Política Nacional de Resíduos Sólidos (Lei nº 12.305/2010) estabelece sobre o lixo eletrônico?', 'Permite o descarte em lixões;Obriga o consumidor a reutilizar equipamentos antigos;Estimula a logística reversa e a responsabilidade compartilhada;Proíbe o consumo de produtos eletrônicos importados', 'C', 5);
+INSERT INTO Questoes VALUES (NULL, 'Qual das alternativas representa uma solução sustentável para o problema do lixo eletrônico no Centro-Oeste?', 'Abertura de novos lixões para armazenar esse tipo de resíduo;Incentivo à importação de equipamentos usados;Desenvolvimento de centros de triagem e reciclagem tecnológica;Exportação de lixo eletrônico para países vizinhos', 'C', 5);
 
 COMMIT;

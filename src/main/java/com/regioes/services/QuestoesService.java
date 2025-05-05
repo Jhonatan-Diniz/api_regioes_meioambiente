@@ -10,16 +10,19 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.regioes.services.RegioesService;
 import com.regioes.models.RegiaoModel;
 import com.regioes.models.QuestaoModel;
 import com.regioes.connection.ConnectDb;
 import com.regioes.dto.QuestaoResponse;
 
 public class QuestoesService extends ConnectDb {
-    public ArrayList<QuestaoModel> getQuestoesArrayByRegiao(int regiao_id) {
-        ArrayList<QuestaoModel> questions_list = new ArrayList();
-        QuestaoModel quest;
 
+    public ArrayList<QuestaoModel> getQuestoesArrayByRegiao(String regiao_nome) {
+        RegioesService regiao_service = new RegioesService();
+        ArrayList<QuestaoModel> questions_list = new ArrayList();
+        int regiao_id = regiao_service.getRegiaoByName(regiao_nome).getId();
+        QuestaoModel quest;
         try {
             Statement statement = getConnection().createStatement();
             ResultSet quest_info =
@@ -79,9 +82,9 @@ public class QuestoesService extends ConnectDb {
         return false;
     }
 
-    public Integer quantRespostasCertas(int regiao_id, List<String> respostas) {
+    public Integer quantRespostasCertas(String regiao_nome, List<String> respostas) {
         Integer respostas_corretas = new Integer(0);
-        ArrayList<QuestaoModel> questoes = getQuestoesArrayByRegiao(regiao_id);
+        ArrayList<QuestaoModel> questoes = getQuestoesArrayByRegiao(regiao_nome);
         for (int i = 0; i < respostas.size(); i++) {
             if (checkResposta(respostas.get(i), questoes.get(i).getId())) {
                 respostas_corretas++;

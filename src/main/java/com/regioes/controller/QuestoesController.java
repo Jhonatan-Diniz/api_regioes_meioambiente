@@ -27,9 +27,9 @@ import com.regioes.dto.RespostasCertasResponse;
 public class QuestoesController {
 
     QuestoesService questoes_service = new QuestoesService();
-    @GetMapping("/{regiao_id}/questao")
-    public ResponseEntity<List<QuestaoResponse>> questoes(@PathVariable int regiao_id) {
-        ArrayList<QuestaoModel> questoes_regiao = questoes_service.getQuestoesArrayByRegiao(regiao_id);
+    @GetMapping("/{regiao_nome}/questao")
+    public ResponseEntity<List<QuestaoResponse>> questoes(@PathVariable String regiao_nome) {
+        ArrayList<QuestaoModel> questoes_regiao = questoes_service.getQuestoesArrayByRegiao(regiao_nome);
         List<QuestaoResponse> questoes_response = new ArrayList<>();
 
         for (QuestaoModel q : questoes_regiao) {
@@ -47,14 +47,14 @@ public class QuestoesController {
     }
 
     @GetMapping("/respostas_corretas")
-    public ResponseEntity<RespostasCertasResponse> respostas_corretas(@RequestParam int regiao_id, @RequestParam List<String> respostas) {
+    public ResponseEntity<RespostasCertasResponse> respostas_corretas(@RequestParam  String regiao_nome, @RequestParam List<String> respostas) {
         RespostasCertasResponse respostas_corretas = new RespostasCertasResponse();
         if (respostas.size() > 10) {
             respostas_corretas.message = "maximo de 10 respostas excedido";
             respostas_corretas.quant_acertos = -1;
             return new ResponseEntity<RespostasCertasResponse>(respostas_corretas, HttpStatus.BAD_REQUEST);
         }
-        Integer n_acertos = questoes_service.quantRespostasCertas(regiao_id, respostas);
+        Integer n_acertos = questoes_service.quantRespostasCertas(regiao_nome, respostas);
         respostas_corretas.message = "sucesso";
         respostas_corretas.quant_acertos = n_acertos;
         return new ResponseEntity<RespostasCertasResponse>(respostas_corretas, HttpStatus.OK);
